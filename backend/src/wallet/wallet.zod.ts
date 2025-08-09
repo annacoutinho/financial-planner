@@ -8,12 +8,10 @@ export const createWalletSchema = z.object({
     .default({}),
 });
 
-export const updateWalletSchema = createWalletSchema
-  .partial()
-  .extend({
 
-    clientId: z.undefined(),
-  });
+export const updateWalletSchema = createWalletSchema
+  .omit({ clientId: true })
+  .partial();
 
 export type CreateWalletDto = z.infer<typeof createWalletSchema>;
 export type UpdateWalletDto = z.infer<typeof updateWalletSchema>;
