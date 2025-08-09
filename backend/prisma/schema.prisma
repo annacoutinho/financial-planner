@@ -53,3 +53,4 @@ model Simulation {
   clientId   Int
   client     Client   @relation(fields: [clientId], references: [id])
 }
+
